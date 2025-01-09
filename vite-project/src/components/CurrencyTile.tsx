@@ -1,29 +1,32 @@
+import useCurrencyStore from '../stores/currencyStore'
 import { CurrencyItem } from '../utils/types'
 import { useState } from 'react'
 
 interface CurrencyTileProps {
-	item: CurrencyItem
-	onToggle: () => void
+	name: string
 }
 
-const CurrencyTile: React.FC<CurrencyTileProps> = ({ item, onToggle }) => {
+const CurrencyTile: React.FC<CurrencyTileProps> = ({ name }) => {
 	// const [selected, setSelected] = useState<boolean>(false)
-	return (
+	const item: CurrencyItem = useCurrencyStore((state) => state.items[name])
+	const updateItem = useCurrencyStore((state) => state.updateItem)
+	const toggleSelected = () => {
+		item.selected = !item.selected
+		updateItem(item)
+	}
+	return !item ? (
+		<div>Loading...</div>
+	) : (
 		<div
 			className={`w-1/5 h-[72px] border-2 flex flex-col p-1 justify-center cursor-pointer hover:border-white ${
-				item.selected
+				item && item.selected
 					? `opacity-100 border-gray-300 rounded p-1`
 					: ` border-amber-500 opacity-40 hover:opacity-100`
 			}`}
-			onClick={onToggle}
+			onClick={toggleSelected}
 		>
-			{/* <div className="flex flex-col">
-				<div> -icon placeholder- Leveling</div>
-				<div> -icon placeholder- Endgame</div>
-			</div> */}
-
 			<div className="flex text-md font-bold h-12 justify-between px-2">
-				<img className={`h-[80%]`} src={`images/currency/${item.image}`} />
+				<img className={`h-[80%]`} src={`images/currency/${item?.image}`} />
 				<div className="flex self-center text-right">{item.name}</div>
 			</div>
 		</div>

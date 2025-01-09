@@ -1,0 +1,61 @@
+import { Tier } from '../../../utils/types'
+
+const currencyTiers: Tier[] = [
+	{
+		tier: 1,
+		class: 'Stackable Currency',
+		fontSize: 45,
+		textColor: [255, 0, 0, 255],
+		borderColor: [255, 0, 0, 255],
+		backgroundColor: [255, 255, 255, 255],
+		alertSound: [6, 300],
+		effect: 'Red',
+		minimapIcon: [0, 'Red Star'],
+	},
+	{
+		tier: 2,
+		class: 'Stackable Currency',
+		fontSize: 40,
+		textColor: [255, 255, 255, 255],
+		borderColor: [255, 255, 255, 255],
+		backgroundColor: [240, 90, 35, 255],
+		alertSound: [1, 300],
+		effect: 'Red',
+		minimapIcon: [0, 'Red Circle'],
+	},
+	{
+		tier: 3,
+		class: 'Stackable Currency',
+		fontSize: 35,
+		textColor: [0, 0, 0, 255],
+		borderColor: [0, 0, 0, 255],
+		backgroundColor: [249, 150, 25, 255],
+		alertSound: [2, 300],
+		effect: 'Yellow',
+		minimapIcon: [2, 'Yellow Circle'],
+	},
+	{
+		tier: 4,
+		class: 'Stackable Currency',
+		fontSize: 35,
+		textColor: [0, 0, 0, 255],
+		borderColor: [0, 0, 0, 255],
+		backgroundColor: [213, 159, 0, 255],
+		alertSound: [2, 300],
+		effect: 'White',
+		minimapIcon: [2, 'White Circle'],
+	},
+	{
+		tier: 5,
+		class: 'Stackable Currency',
+		fontSize: 30,
+		textColor: [0, 0, 0, 255],
+		borderColor: [0, 0, 0, 255],
+		backgroundColor: [210, 178, 135, 255],
+		alertSound: null,
+		effect: null,
+		minimapIcon: [2, 'Grey Circle'],
+	},
+]
+
+export default currencyTiers
