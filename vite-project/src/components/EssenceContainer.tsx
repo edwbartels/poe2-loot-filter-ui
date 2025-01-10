@@ -14,8 +14,8 @@ const EssenceContainer: React.FC = ({}) => {
 				Essences
 			</div>
 			<div className="flex">
-				<div className="flex flex-col w-1/2">
-					<div className="font-bold text-xl text-center border-b-2 border-r-2 border-black">
+				<div className="flex flex-col w-1/2 border-r-2 border-black">
+					<div className="font-bold text-xl text-center border-b-2 border-black">
 						Normal
 					</div>
 					<div className="flex flex-wrap justify-start ">
@@ -27,8 +27,8 @@ const EssenceContainer: React.FC = ({}) => {
 						)}
 					</div>
 				</div>
-				<div className="flex flex-col w-1/2">
-					<div className="font-bold text-xl text-center border-b-2 border-l-2 border-black">
+				<div className="flex flex-col w-1/2 border-l-2 border-black">
+					<div className="font-bold text-xl text-center border-b-2 border-black">
 						Greater
 					</div>
 					<div className="flex flex-wrap justify-start">

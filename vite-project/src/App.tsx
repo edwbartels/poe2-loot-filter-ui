@@ -3,6 +3,9 @@ import { useState } from 'react'
 import CurrencyContainer from './components/CurrencyContainer'
 import GemContainer from './components/GemContainer'
 import EssenceContainer from './components/EssenceContainer'
+import RuneContainer from './components/RuneContainer'
+import WaystoneContainer from './components/WaystoneContainer'
+import PrecursorTabletContainer from './components/PrecursorTabletContainer'
 import { CurrencyItem } from './utils/types'
 import currency from './data/currency'
 import templateText from './assets/base-filter-currency'
@@ -42,8 +45,11 @@ Hide # type->currency
 			<CurrencyContainer />
 			<GemContainer />
 			<EssenceContainer />
+			<RuneContainer />
+			<WaystoneContainer />
+			<PrecursorTabletContainer />
 			<button
-				className="bg-yellow-500 rounded px-2 text-black font-bold border-2 border-black hover:border-white"
+				className="bg-yellow-500 rounded px-2 text-black font-bold border-2 border-black hover:border-white mb-10"
 				onClick={handleGenerate}
 			>
 				Generate
