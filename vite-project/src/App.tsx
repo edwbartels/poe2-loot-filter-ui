@@ -1,11 +1,12 @@
 import './App.css'
 import { useState } from 'react'
 import CurrencyContainer from './components/CurrencyContainer'
+import GemContainer from './components/GemContainer'
+import EssenceContainer from './components/EssenceContainer'
 import { CurrencyItem } from './utils/types'
 import currency from './data/currency'
 import templateText from './assets/base-filter-currency'
 import useCurrencyStore from './stores/currencyStore'
-import GemContainer from './components/GemContainer'
 
 function App() {
 	const currencyItems = useCurrencyStore((state) => state.items)
@@ -40,6 +41,7 @@ Hide # type->currency
 		<div className="flex flex-col min-h-screen min-w-[1000px] font-sans bg-gray-700 text-gray-400 items-center">
 			<CurrencyContainer />
 			<GemContainer />
+			<EssenceContainer />
 			<button
 				className="bg-yellow-500 rounded px-2 text-black font-bold border-2 border-black hover:border-white"
 				onClick={handleGenerate}
