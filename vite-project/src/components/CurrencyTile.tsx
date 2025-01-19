@@ -1,19 +1,17 @@
 import useCurrencyStore from '../stores/currencyStore'
+import useModalStore from '../stores/modalStore'
 import { CurrencyItem } from '../utils/types'
 import { useState } from 'react'
+import CurrencyModal from './CurrencyModal'
 
 interface CurrencyTileProps {
 	name: string
+	onClick: () => void
 }
 
-const CurrencyTile: React.FC<CurrencyTileProps> = ({ name }) => {
-	// const [selected, setSelected] = useState<boolean>(false)
+const CurrencyTile: React.FC<CurrencyTileProps> = ({ name, onClick }) => {
 	const item: CurrencyItem = useCurrencyStore((state) => state.items[name])
-	const updateItem = useCurrencyStore((state) => state.updateItem)
-	const toggleSelected = () => {
-		item.selected = !item.selected
-		updateItem(item)
-	}
+
 	return !item ? (
 		<div>Loading...</div>
 	) : (
@@ -23,7 +21,7 @@ const CurrencyTile: React.FC<CurrencyTileProps> = ({ name }) => {
 					? `opacity-100 border-gray-300 rounded p-1`
 					: ` border-amber-500 opacity-40 hover:opacity-100`
 			}`}
-			onClick={toggleSelected}
+			onClick={onClick}
 		>
 			<div className="flex text-md font-bold h-12 justify-between px-2">
 				<img className={`h-[80%]`} src={`images/currency/${item?.image}`} />

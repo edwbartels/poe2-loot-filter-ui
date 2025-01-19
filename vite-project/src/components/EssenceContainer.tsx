@@ -8,6 +8,7 @@ const EssenceContainer: React.FC = ({}) => {
 	useEffect(() => {
 		populateItems()
 	}, [populateItems])
+
 	return (
 		<div className="flex flex-col w-[1000px] m-2 border-4 border-black">
 			<div className="border-b-4 border-black text-center font-bold text-3xl pb-1">
