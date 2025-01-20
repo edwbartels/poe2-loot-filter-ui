@@ -14,7 +14,8 @@ const CurrencyModal: React.FC<CurrencyModalProps> = ({
 	onClose,
 	name,
 }) => {
-	const item = useCurrencyStore((state) => state.items[name])
+	const item: CurrencyItem = useCurrencyStore((state) => state.items[name])
+	const [pending, setPending] = useState(item)
 	const { updateItem } = useCurrencyStore((state) => state)
 
 	if (!isOpen) return null
